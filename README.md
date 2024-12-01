@@ -1,65 +1,44 @@
-# clear-all-console-log README
+# Clear All Console Log
 
-This is the README for your extension "clear-all-console-log". After writing up a brief description, we recommend including the following sections.
+*Clear All Console Log* is a Visual Studio Code extension that removes all console.log statements from your files or project. It also includes options to keep console.error statements, allowing you to clean up your code while preserving useful error messages.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Remove all console.log statements** from your entire project or the current file.
+- **Keep console.error** if desired, with an option to remove other console types (such as console.warn, console.info, etc.).
+- Ideal for cleaning up your code before production without losing valuable error messages.
 
-For example if there is an image subfolder under your extension project workspace:
+## Available Commands
 
-\!\[feature X\]\(images/feature-x.png\)
+- **Clear console in the entire project**: Removes all console.log statements from the entire project.
+- **Clear console in the current file**: Removes all console.log statements from the current file only.
+- **Clear console in the entire project except error**: Removes all console.log statements from the project, but keeps console.error.
+- **Clear console in the current file except error**: Removes all console.log statements from the current file, but keeps console.error.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Installation
 
-## Requirements
+1. Open VS Code.
+2. Go to the Extensions view (Ctrl+Shift+X).
+3. Search for *Clear All Console Log*.
+4. Click *Install*.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Activation
 
-## Extension Settings
+The extension is activated via the following commands:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+- onCommand:clear-console-project
+- onCommand:clear-console-file
+- onCommand:clear-console-project-except-error
+- onCommand:clear-console-file-except-error
 
-For example:
+## Usage
 
-This extension contributes the following settings:
+To use the extension, you can run any of the commands from the Command Palette (Ctrl+Shift+P) or assign custom shortcuts. The available commands allow you to clear all console.log statements in your project or the current file, with options to preserve errors.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Contributions
 
-## Known Issues
+If you would like to contribute to this project, please open an issue or submit a pull request on the [GitHub repository](https://github.com/nicolasAguero99/clear-all-console-log.git).
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## License
 
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
