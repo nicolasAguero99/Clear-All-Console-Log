@@ -1,0 +1,88 @@
+{
+  "name": "clear-all-console-log",
+  "displayName": "Clear All Console Log",
+  "description": "A VS Code extension to remove all console.log statements from your files or project, with options to keep console.error.",
+  "version": "0.0.1",
+  "publisher": "nicolasAguero99", 
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Linters",
+    "Formatters",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:clear-console-project",
+    "onCommand:clear-console-file",
+    "onCommand:clear-console-project-except-error",
+    "onCommand:clear-console-file-except-error"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "clear-console-project",
+        "title": "Clear console in the entire project"
+      },
+      {
+        "command": "clear-console-file",
+        "title": "Clear console in the current file"
+      },
+      {
+        "command": "clear-console-project-except-error",
+        "title": "Clear console in the entire project except error"
+      },
+      {
+        "command": "clear-console-file-except-error",
+        "title": "Clear console in the current file except error"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "keywords": [
+    "vscode-extension",
+    "clear-console",
+    "console-cleaner",
+    "log-removal",
+    "debugging",
+    "console-log",
+    "console-error",
+    "console-warn",
+    "console-info",
+    "console-debug",
+    "console-table",
+    "console",
+    "console-removal",
+    "console-cleanup",
+    "console-clean",
+    "console-clear",
+    "console-erase",
+    "console-delete",
+    "console-eliminate",
+    "console-elimination",
+    "clean-console",
+    "clear-console",
+    "remove-console",
+    "remove-all-console",
+    "remove-console-log"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicolasAguero99/Clear-All-Console-Log.git"
+  },
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "eslint": "^9.9.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
