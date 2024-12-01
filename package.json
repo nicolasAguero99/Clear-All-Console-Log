@@ -73,9 +73,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nicolasAguero99/Clear-All-Console-Log.git"
+    "url": "https://github.com/nicolasAguero99/clear-all-console-log.git"
   },
-  "author": "Your Name <your.email@example.com>",
+  "author": "nicolasAguero99 <nico.agueroo99@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/vscode": "^1.93.0",
