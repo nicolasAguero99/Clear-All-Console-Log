@@ -2,11 +2,12 @@
   "name": "clear-all-console-log",
   "displayName": "Clear All Console Log",
   "description": "A VS Code extension to remove all console.log statements from your files or project, with options to keep console.error.",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "publisher": "nicolasAguero99", 
   "engines": {
     "vscode": "^1.93.0"
   },
+  "icon": "clear-all-console-log-logo.png",
   "categories": [
     "Linters",
     "Formatters",
