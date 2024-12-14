@@ -1,6 +1,6 @@
 # Clear All Console Log
 
-![clear-all-console-log-video](https://github.com/user-attachments/assets/afc8c1f3-6658-455d-96fc-9d1ca9780074)
+![clear-all-console-log](https://github.com/user-attachments/assets/6baaaf9c-c1fc-42de-8014-5897a6a66d5a)
 
 *Clear All Console Log* is a Visual Studio Code extension designed to clean up your code by removing all logging statements or output functions from supported languages in your project or current file. The extension offers flexible options, allowing you to preserve error-related logs like `console.error` while clearing others.
 
