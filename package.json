@@ -1,7 +1,7 @@
 {
   "name": "clear-all-console-log",
   "displayName": "Clear All Console Log",
-  "description": "A VS Code extension to remove all console.log statements from your files or project, with options to keep console.error.",
+  "description": "A powerful VS Code extension designed to help developers easily remove all output statements (e.g., console.log, print, System.out.println) from their files or entire projects. It supports multiple programming languages like JavaScript, Python, Java, C, C++, and C#, with customizable options to retain specific outputs like console.error. This extension streamlines code cleanup, making it ideal for preparing code for production or sharing.",
   "version": "0.0.4",
   "publisher": "nicolasAguero99", 
   "engines": {
