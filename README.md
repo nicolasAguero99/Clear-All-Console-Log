@@ -1,46 +1,72 @@
 # Clear All Console Log
 
-![clear-all-console-log-video](https://github.com/user-attachments/assets/fb70749b-8dea-4db7-a8a5-bc8d514b1a75)
+![clear-all-console-log-video](https://github.com/user-attachments/assets/afc8c1f3-6658-455d-96fc-9d1ca9780074)
 
-*Clear All Console Log* is a Visual Studio Code extension that removes all console.log statements from your files or project. It also includes options to keep console.error statements, allowing you to clean up your code while preserving useful error messages.
+*Clear All Console Log* is a Visual Studio Code extension designed to clean up your code by removing all logging statements or output functions from supported languages in your project or current file. The extension offers flexible options, allowing you to preserve error-related logs like `console.error` while clearing others.
 
 ## Features
 
-- **Remove all console.log statements** from your entire project or the current file.
-- **Keep console.error** if desired, with an option to remove other console types (such as console.warn, console.info, etc.).
-- Ideal for cleaning up your code before production without losing valuable error messages.
+- **Multi-language support:** Handles common logging functions across multiple programming languages, including JavaScript, Python, Java, C, C++, and C#.
+- **Selective clearing:**
+  - Remove all output statements (`console.log`, `print`, `System.out.println`, etc.).
+  - Preserve error-related logs (`console.error`, or similar in other languages).
+- **Scoping options:**
+  - Apply changes to the entire project.
+  - Apply changes to the currently open file.
+
+### Supported Languages and Functions
+
+| Language    | Logging Functions                 | Extensions          |
+|-------------|-----------------------------------|---------------------|
+| JavaScript  | `console.log`, `console.warn`     | `.js`, `.ts`, `.jsx`, `.tsx` |
+| Python      | `print()`                         | `.py`               |
+| Java        | `System.out.println()`            | `.java`             |
+| C           | `printf()`                        | `.c`, `.h`          |
+| C++         | `std::cout << ...`                | `.cpp`, `.hpp`      |
+| C#          | `Console.WriteLine()`             | `.cs`               |
 
 ## Available Commands
 
-- **Clear console in the entire project**: Removes all console.log statements from the entire project.
-- **Clear console in the current file**: Removes all console.log statements from the current file only.
-- **Clear console in the entire project except error**: Removes all console.log statements from the project, but keeps console.error.
-- **Clear console in the current file except error**: Removes all console.log statements from the current file, but keeps console.error.
+### General Commands
+- **Clear all outputs in the entire project:** Removes all logging/output statements across the project.
+- **Clear all outputs in the current file:** Removes all logging/output statements from the currently open file.
+
+### Conditional Commands
+- **Clear outputs except errors (project):** Removes all outputs across the project except error-related logs (`console.error`, etc.).
+- **Clear outputs except errors (file):** Removes all outputs from the current file except error-related logs.
 
 ## Installation
 
 1. Open VS Code.
-2. Go to the Extensions view (Ctrl+Shift+X).
+2. Go to the Extensions view (`Ctrl+Shift+X`).
 3. Search for *Clear All Console Log*.
-4. Click *Install*.
-
-## Activation
-
-The extension is activated via the following commands:
-
-- onCommand:clear-console-project
-- onCommand:clear-console-file
-- onCommand:clear-console-project-except-error
-- onCommand:clear-console-file-except-error
+4. Click **Install**.
 
 ## Usage
 
-To use the extension, you can run any of the commands from the Command Palette (Ctrl+Shift+P) or assign custom shortcuts. The available commands allow you to clear all console.log statements in your project or the current file, with options to preserve errors.
+1. Open the Command Palette (`Ctrl+Shift+P`).
+2. Type and select one of the following commands:
+   - `Clear all outputs in the current file`
+   - `Clear all outputs in the entire project`
+   - `Clear outputs except errors (file)`
+   - `Clear outputs except errors (project)`
+3. For multi-language projects, a selection menu will appear, allowing you to choose the language you want to process.
+
+### Example Scenarios
+
+- **JavaScript Project:** Clean up all `console.log` and `console.warn` statements before deployment, preserving `console.error` for debugging.
+- **Python Script:** Remove all `print()` calls, ensuring clean output in production.
+- **Multi-language Project:** Choose specific languages to process and apply the extension's functionality selectively.
+
+## Configuration
+
+The extension uses pre-configured regex patterns for each language to identify and handle logging/output statements. You can customize these patterns by editing the `LANG` configuration in the source code if needed.
 
 ## Contributions
 
-If you would like to contribute to this project, please open an issue or submit a pull request on the [GitHub repository](https://github.com/nicolasAguero99/clear-all-console-log.git).
+Contributions are welcome! If you'd like to report a bug, suggest a feature, or submit a pull request, visit the [GitHub repository](https://github.com/nicolasAguero99/clear-all-console-log.git).
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+

@@ -1,14 +1,47 @@
-const { clearConsoleFile, clearConsoleProject, clearConsoleProjectExceptError, clearConsoleFileExceptError } = require('./commands-functions');
+const { initializeRegisterCommands } = require('./commands.js');
 
-/**
- * @param {vscode.ExtensionContext} context
- */
+const vscode = require('vscode');
+const { LANG } = require('./constants/constants.js');
 
 async function activate(context) {
-  context.subscriptions.push(clearConsoleProject);
-  context.subscriptions.push(clearConsoleFile);
-  context.subscriptions.push(clearConsoleProjectExceptError);
-  context.subscriptions.push(clearConsoleFileExceptError);
+  initializeRegisterCommands(context)
+
+  const clearAllOutputsCommandFile = vscode.commands.registerCommand('clear-outputs-file', function () {
+    vscode.window.showQuickPick(
+      Object.keys(LANG).map(lang => {
+        return {
+          label: LANG[lang].label,
+          command: `clear-outputs-file-${LANG[lang].subfix_command}`,
+          description: `(${LANG[lang].extensions.join(', ')})`
+        }
+      }),
+      { placeHolder: 'Select a language to clear outputs' }
+    ).then(selection => {
+      if (selection) {
+        vscode.commands.executeCommand(selection.command);
+      }
+    });
+  });
+
+  const clearAllOutputsCommandProject = vscode.commands.registerCommand('clear-outputs-project', function () {
+    vscode.window.showQuickPick(
+      Object.keys(LANG).map(lang => {
+        return {
+          label: LANG[lang].label,
+          command: `clear-outputs-project-${LANG[lang].subfix_command}`,
+          description: `(${LANG[lang].extensions.join(', ')})`
+        }
+      }),
+      { placeHolder: 'Select a language to clear outputs in the entire project' }
+    ).then(selection => {
+      if (selection) {
+        vscode.commands.executeCommand(selection.command);
+      }
+    });
+  });
+
+  context.subscriptions.push(clearAllOutputsCommandFile);
+  context.subscriptions.push(clearAllOutputsCommandProject);
 }
 
 function deactivate() { }

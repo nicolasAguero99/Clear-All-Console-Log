@@ -23,20 +23,20 @@
   "contributes": {
     "commands": [
       {
-        "command": "clear-console-project",
-        "title": "Clear console in the entire project"
+        "command": "clear-outputs-project",
+        "title": "Clear all outputs in the entire project"
       },
       {
-        "command": "clear-console-file",
-        "title": "Clear console in the current file"
+        "command": "clear-outputs-file",
+        "title": "Clear all outputs in the current file"
       },
       {
         "command": "clear-console-project-except-error",
-        "title": "Clear console in the entire project except error"
+        "title": "Clear all console in the entire project except error (.js, .ts, .jsx, .tsx)"
       },
       {
         "command": "clear-console-file-except-error",
-        "title": "Clear console in the current file except error"
+        "title": "Clear all console in the current file except error (.js, .ts, .jsx, .tsx)"
       }
     ]
   },
