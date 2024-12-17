@@ -6,21 +6,17 @@ const { LANG } = require('./constants/constants.js');
 async function activate(context) {
   initializeRegisterCommands(context)
 
+  // Eliminar el oput en el archivo actual
   const clearAllOutputsCommandFile = vscode.commands.registerCommand('clear-outputs-file', function () {
-    vscode.window.showQuickPick(
-      Object.keys(LANG).map(lang => {
-        return {
-          label: LANG[lang].label,
-          command: `clear-outputs-file-${LANG[lang].subfix_command}`,
-          description: `(${LANG[lang].extensions.join(', ')})`
-        }
-      }),
-      { placeHolder: 'Select a language to clear outputs' }
-    ).then(selection => {
-      if (selection) {
-        vscode.commands.executeCommand(selection.command);
-      }
-    });
+    const currentFile = vscode.window.activeTextEditor.document.fileName;
+    const fileExtension = currentFile.split('.').pop();
+    const lang = Object.keys(LANG).find(lang => LANG[lang].extensions.includes(fileExtension));
+
+    if (lang) {
+      vscode.commands.executeCommand(`clear-outputs-file-${LANG[lang].subfix_command}`);
+    } else {
+      vscode.window.showInformationMessage('No matching language found for the current file extension.');
+    }
   });
 
   const clearAllOutputsCommandProject = vscode.commands.registerCommand('clear-outputs-project', function () {

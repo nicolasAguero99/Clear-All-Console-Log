@@ -34,7 +34,7 @@ const LANG = {
   },
   c_plus_plus: {
     regex: {
-      allOutputs: /\s*std::cout\s*<<\s*(?:[^;]*|\([^()]*\))*;?/,
+      allOutputs: /\s*(?:std::)?cout\s*<<\s*(?:[^;]*|\([^()]*\))*;?/,
     },
     extensions: ['cpp', 'hpp'],
     label: 'C++',
